@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 4, 2016 11:51:44 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.rain.urs.dao.model.PersonalInfo" table="personal_info" catalog="urs">
+        <id name="idPersonalInfo" type="java.lang.Integer">
+            <column name="id_personal_info" />
+            <generator class="identity" />
+        </id>
+        <property name="firstName" type="string">
+            <column name="first_name" length="45" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="last_name" length="45" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="45" />
+        </property>
+        <property name="mobileNumber" type="string">
+            <column name="mobile_number" length="45" />
+        </property>
+        <set name="personalAddresses" inverse="true">
+            <key>
+                <column name="id_personal_info" not-null="true" />
+            </key>
+            <one-to-many class="com.rain.urs.dao.model.PersonalAddress" />
+        </set>
+    </class>
+</hibernate-mapping>

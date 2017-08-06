@@ -1,0 +1,423 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name=viewport content="width=device-width, initial-scale=1">
+	<!-- TemplateBeginEditable name="doctitle" -->
+	<title>JSON creation and parsing with Jackson example</title> <!-- TemplateEndEditable -->
+	<!-- TemplateBeginEditable name="head" -->
+	<!-- TemplateEndEditable -->
+	<!-- 
+<link rel="stylesheet" href="C:\Users\archana\Documents\Lals\Lals\css\style.css" type="text/css">
+
+ -->
+	<script>
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script',
+				'https://www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-87281095-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+	<link rel="stylesheet" href="../css/style.css" type="text/css">
+	
+</head>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9743223135686239",
+    enable_page_level_ads: true
+  });
+</script>
+<body class="thrColHybHdr">
+	<!-- ---------------------------------------------------------------------------------------Start #Container--------------------------------------------------------------- -->
+	<div id="container" bgcolor="#F5F5F5">
+		<!-- ---------------------------------------------------------------------------------------Start #header--------------------------------------------------------------- -->
+		<div id="header">
+			<h1 align="center">Creating and parsing Json</h1>
+			<table width="403" align="center" bgcolor="#0000FF">
+				<tr>
+					<td width="100" align="center" valign="middle"><div
+							align="center">
+							<a STYLE="text-decoration: none" href="../index.html"><b><font
+									color="white">Home</font></b></a>
+						</div></td>
+					<td width="100" align="center" valign="middle"><div
+							align="center">
+							<a STYLE="text-decoration: none" href="../about_us.html"><b><font
+									color="white">About US</font></b></a>
+						</div></td>
+					<td width="100" align="center" valign="middle"><div
+							align="center">
+							<a STYLE="text-decoration: none" href="../contact_us.html"><b><font
+									color="white">Contact US</font></b></a>
+						</div></td>
+
+				</tr>
+			</table>
+		</div>
+
+		<!-- ---------------------------------------------------------------------------------------end #header--------------------------------------------------------------- -->
+
+		<!-- ---------------------------------------------------------------------------------------start #left--------------------------------------------------------------- -->
+		<div id="left">
+			<table width="auto" height="auto" align="left" cellpadding="20"
+				bgcolor=" #66CDAA ">
+
+				<tr>
+					<font size="6">
+						<td height="5" align="left" valign="middle" bordercolor="#999999"><a
+							STYLE="text-decoration: none"><b><font color="white">Related
+										Topics</font></b></a></td>
+					</font>
+				</tr>
+				<tr>
+					<font size="6">
+						<td height="5" align="left" valign="middle" bordercolor="#999999"><a
+							STYLE="text-decoration: none"
+							href="../webservices/apache_cxf_rest_web_services.html">Rest
+								Web Services - Apache CXF </a></td>
+					</font>
+				</tr>
+				<tr>
+					<font size="6">
+						<td height="5" align="left" valign="middle" bordercolor="#999999"><a
+							STYLE="text-decoration: none"
+							href="../webservices/apache_cxf_rest_web_services_client.html">Rest
+								Web Services Client- Apache CXF</a></td>
+					</font>
+				</tr>
+
+				<tr>
+					<font size="6">
+						<td height="5" align="left" valign="middle" bordercolor="#999999"><a
+							STYLE="text-decoration: none"
+							href="../webservices/rest_angular_js_client.html">Rest Web
+								Services Client- AngularJS</a></td>
+					</font>
+				</tr>
+
+				<tr>
+					<font size="6">
+						<td height="5" align="left" valign="middle" bordercolor="#999999"><a
+							STYLE="text-decoration: none"
+							href="../webservices/apache_cxf_soap_web_services.html">Soap
+								Web Services - Apache CXF </a></td>
+					</font>
+				</tr>
+				<tr>
+					<font size="6">
+						<td height="5" align="left" valign="middle" bordercolor="#999999"><a
+							STYLE="text-decoration: none"
+							href="../webservices/apache_cxf_soap_web_services_client.html">Soap
+								Web Services Client - Apache CXF </a></td>
+					</font>
+				</tr>
+				<tr>
+					<font size="6">
+						<td height="5" align="left" valign="middle" bordercolor="#999999"><a
+							STYLE="text-decoration: none"
+							href="../java/jackson_json_parser.html"> JSON Encoding and
+								Decoding </a></td>
+					</font>
+				</tr>
+				<tr>
+					<font size="6">
+						<td height="5" align="left" valign="middle" bordercolor="#999999"><a
+							STYLE="text-decoration: none" href="../java/map.html"> Map -
+								Java8 </a></td>
+					</font>
+				</tr>
+
+				<tr>
+					<font size="6">
+						<td height="5" align="left" valign="middle" bordercolor="#999999"><a
+							STYLE="text-decoration: none" href="../java/set.html"> Set -
+								Java8 </a></td>
+					</font>
+				</tr>
+
+				<tr>
+					<font size="6">
+						<td height="5" align="left" valign="middle" bordercolor="#999999"><a
+							STYLE="text-decoration: none" href="../java/list.html"> List
+								- Java8 </a></td>
+					</font>
+				</tr>
+
+			</table>
+		</div>
+		<!-- ---------------------------------------------------------------------------------------end #left--------------------------------------------------------------- -->
+
+
+
+
+
+
+		<div id="right">
+
+
+
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- RHS_SKY -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-9743223135686239"
+     data-ad-slot="4212524405"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<br>
+<br>
+<br>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- RHS_SKY -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-9743223135686239"
+     data-ad-slot="4212524405"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+		</div>
+
+		<!-- ---------------------------------------------------------------------------------------end #right--------------------------------------------------------------- -->
+
+
+		<!-- ---------------------------------------------------------------------------------------Start #Center--------------------------------------------------------------- -->
+
+		<div id="center" font="sans-serif" style="font-size: 25px">
+
+
+
+			<p1> This example explains how to write a <b>JSON Decode and
+				Encode</b> using Jackson. Following are the main components oof this
+			example.</p1>
+
+			<br> <p2> <a href="#pom"> pom.xml</a> <br> <a
+					href="#Address">Address.java</a><br> <a href="#JsonExample">JsonExample.java</a><br>
+							<a href="#response">Output</a><br>
+				</p2> <a name="pom"></a>
+
+				<h3 align="left">Step 1: Create Maven project</h3> <p1>
+				Following pom.xml defines the dependencies for this example. </p1> <pre>
+&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  &lt;modelVersion>4.0.0&lt;/modelVersion>
+
+  &lt;groupId>com.smoothexample.json&lt;/groupId>
+  &lt;artifactId>jackson_parser&lt;/artifactId>
+  &lt;version>0.0.1-SNAPSHOT&lt;/version>
+  &lt;packaging>jar&lt;/packaging>
+
+  &lt;name>jackson_parser&lt;/name>
+  &lt;url>http://maven.apache.org&lt;/url>
+
+  &lt;properties>
+    &lt;project.build.sourceEncoding>UTF-8&lt;/project.build.sourceEncoding>
+    &lt;com.fasterxml.jackson.version>2.3.3&lt;/com.fasterxml.jackson.version>
+  &lt;/properties>
+
+  &lt;dependencies>
+  &lt;dependency>
+			&lt;groupId>com.fasterxml.jackson.core&lt;/groupId>
+			&lt;artifactId>jackson-core&lt;/artifactId>
+			&lt;version>${com.fasterxml.jackson.version}&lt;/version>
+		&lt;/dependency>
+		&lt;dependency>
+			&lt;groupId>com.fasterxml.jackson.core&lt;/groupId>
+			&lt;artifactId>jackson-annotations&lt;/artifactId>
+			&lt;version>${com.fasterxml.jackson.version}&lt;/version>
+		&lt;/dependency>
+		&lt;dependency>
+			&lt;groupId>com.fasterxml.jackson.core&lt;/groupId>
+			&lt;artifactId>jackson-databind&lt;/artifactId>
+			&lt;version>${com.fasterxml.jackson.version}&lt;/version>
+		&lt;/dependency>
+		&lt;dependency>
+			&lt;groupId>com.fasterxml.jackson.jaxrs&lt;/groupId>
+			&lt;artifactId>jackson-jaxrs-json-provider&lt;/artifactId>
+			&lt;version>${com.fasterxml.jackson.version}&lt;/version>
+		&lt;/dependency>
+		
+  &lt;/dependencies>
+&lt;/project>
+
+
+
+</pre> <a name="Address"></a>
+				<h3 align="left" style="font-size: 30px">Step 2: Create a data
+					transfer object</h3> <p1> Following DTO can be used in parsing and
+				creating json. </p1> <pre>
+package com.smoothexample.json;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
+public class Address {
+	
+	@Override
+	public String toString() {
+		return "Address [streetAddress=" + streetAddress + ", addressOptional=" + addressOptional + ", city=" + city
+				+ ", state=" + state + ", country=" + country + ", zip=" + zip + "]";
+	}
+	private String streetAddress;
+	private String addressOptional;
+	private String city;
+	private String state;
+	private String country;
+	private String zip;
+	
+	
+	
+	public String getStreetAddress() {
+		return streetAddress;
+	}
+	public void setStreetAddress(String streetAddress) {
+		this.streetAddress = streetAddress;
+	}
+	public String getAddressOptional() {
+		return addressOptional;
+	}
+	public void setAddressOptional(String addressOptional) {
+		this.addressOptional = addressOptional;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
+	}
+	public String getZip() {
+		return zip;
+	}
+	public void setZip(String zip) {
+		this.zip = zip;
+	}
+	
+	
+
+}
+
+
+</pre> <a name="JsonExample"></a>
+				<h3 align="left" style="font-size: 30px">Step 3:Creating and
+					Parsing Json - Example</h3> <p1>Following application will first
+				convert an object to json. Then it will again convert the generated
+				json string to related java object. Alsojson encode and decode
+				properties are set in the method private static ObjectMapper
+				getObjectMapper() {..}</p1> <pre>
+
+
+package com.smoothexample.json;
+
+import java.io.IOException;
+
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class JsonExample 
+{
+    public static void main( String[] args ) throws IOException
+    {
+        Address address = createAddress();
+        ObjectMapper objectMapper = getObjectMapper();
+        
+        System.out.println(" Converting java object to json");
+        String  jsonString = objectMapper.writeValueAsString(address);
+        System.out.println(jsonString);
+        
+        System.out.println(" Converting json to java object ");
+        
+        Address addressFromJson = objectMapper.readValue(jsonString, Address.class);
+        System.out.println(addressFromJson.toString());
+        
+    }
+    
+    private static Address createAddress() {
+		Address address = new Address();
+		address.setStreetAddress("4800 abc Rd");
+		address.setCity("Edison");
+		address.setState("NJ");
+		address.setCountry("US");
+		address.setZip("10001");
+		address.setAddressOptional("apt 1900");
+
+		return address;
+	}
+    
+    
+    
+    
+    private static ObjectMapper getObjectMapper() {
+		ObjectMapper objectMapper = new ObjectMapper();
+		objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+		objectMapper.configure(DeserializationFeature.READ_UNKNOWN_ENUM_VALUES_AS_NULL, true);
+		
+		objectMapper.setSerializationInclusion(Include.NON_DEFAULT);
+		objectMapper.setSerializationInclusion(Include.NON_EMPTY);
+		objectMapper.setSerializationInclusion(Include.NON_NULL);
+		return objectMapper;
+	}
+}
+
+
+
+
+</pre> <a name="response"></a>
+				<h3 align="left">Sample output</h3> <pre>
+Converting java object to json
+{"streetAddress":"4800 abc Rd","addressOptional":"apt 1900","city":"Edison","state":"NJ","country":"US","zip":"10001"}
+
+Converting json to java object 
+Address [streetAddress=4800 abc Rd, addressOptional=apt 1900, city=Edison, state=NJ, country=US, zip=10001]
+
+</pre>
+		</div>
+
+		<!-- ---------------------------------------------------------------------------------------End #Center--------------------------------------------------------------- -->
+		<br class="clearfloat" />
+
+
+
+		<!-- ---------------------------------------------------------------------------------------Start  #Footer--------------------------------------------------------------- -->
+
+		<div id="footer">
+			<p align="center">&copy; Copyright 2016. All Rights Reserved.</p>
+			<!-- end #footer -->
+		</div>
+		<!-- ---------------------------------------------------------------------------------------End  #Footer--------------------------------------------------------------- -->
+
+
+
+
+	</div>
+	<!-- ---------------------------------------------------------------------------------------End  #Container--------------------------------------------------------------- -->
+
+</body>
+</html>

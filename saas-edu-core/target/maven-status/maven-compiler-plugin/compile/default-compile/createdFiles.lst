@@ -1,0 +1,7 @@
+com\saas\edu\db\config\DataSourceConfiguration.class
+com\saas\edu\db\config\JPAConfigurations.class
+com\saas\edu\akka\ext\CustomContextProvider.class
+com\saas\edu\akka\ext\SpringExtension.class
+com\saas\edu\akka\ext\SpringActorProducer.class
+com\saas\edu\akka\ext\SpringExtension$SpringExt.class
+com\saas\edu\akka\config\SaasAkkaConfig.class
